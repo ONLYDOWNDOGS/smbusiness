@@ -1,0 +1,64 @@
+version: "3.9"
+   
+services:
+  web:
+    restart: always
+    build: ./web
+    expose:
+      - "8000"
+    links:
+      - postgres:postgres
+      - redis:redis
+    volumes:
+      - web-django:/usr/src/app
+      - web-static:/usr/src/app/static
+    env_file: .env
+    depends_on: 
+      - postgres
+    environment:
+      DEBUG: 'true'
+    command: /usr/local/bin/gunicorn docksite.wsgi:application -w 2 -b :8000
+
+  nginx:
+    restart: always
+    image: mainline
+    build: ./nginx/
+    ports:
+      - "80:80"
+    volumes:
+      - web-static:/www/static
+    links:
+      - web:web
+
+  postgres:
+    restart: always
+    image: postgres:13.3
+    environment:
+      - POSTGRES_PASSWORD=pqowkd_123
+      - POSTGRES_USER=jon
+      - POSTGRES_DB=spacefacts
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+
+  redis:
+    restart: always
+    image: redis:6.2.4
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+
+volumes:
+  web-django:
+  web-static:
+  pgdata:
+  redisdata:
+
+
+
+
+
+
+

@@ -1,0 +1,181 @@
+.toppic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 400px;
+}
+
+.personal {
+    border-left: 3px solid red;
+    border-right: 3px solid black;
+    left: -10%;
+    width: 500px;
+    height: 325px;
+    background-color: rgba(36, 44, 61, 1);
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.personal_info {
+    text-align: center;
+    color: red;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.skillsets_box {
+    width: 300px;
+    height: 750px;
+}
+/* .skillsets {
+    position: inherit;
+    display: inline-flex;
+    vertical-align: right;
+} */
+
+.skill_title {
+    position: inherit;
+    top: -75px;
+    left: 175px;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.skill_info {
+    text-align: center;
+    font-family: Arial;
+    color: red;
+    font-size: 13px;
+}
+
+.picbox {
+    border-width: 5px;
+    width: 400px;
+    height: 450px;
+    left: 13%;
+    z-index: 0;
+    border-color: red;
+    border-style: solid;
+}
+
+.pic {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.shittyspace {
+    position: relative;
+    display: block;
+    top: -150px;
+    border-width: 5px;
+    height: 750px;
+    width: 80%;
+    border-color: red;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("img/space.jpg") no-repeat;
+    background-size: 100%;
+}
+
+.shittyspace_info {
+    position: relative;
+    top: 225px;
+    font-size: 105px;
+    list-style: none;
+    text-align: center; 
+    font-family: Arial;
+    color: rgba(241, 144, 44, 1);
+}
+
+/* XL Screens + Tv's 1312px */
+@media screen and (max-width: 110em) {
+
+}
+
+/* Desktops, Large Screens 992px */
+@media screen and (max-width: 86em) {
+
+}
+/* This isn't working, but the bottom one is at least! */
+/* Tablets 688px */
+@media (max-width: 1366px) {
+    .toppic {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 75px;
+    }
+
+    .personal {
+        left: -5%;
+    } 
+
+    .picbox {
+        left: 10%;
+        width: 400px;
+        height: 50%;
+    }
+
+    .skillsets_box {
+        width: 50%;
+    }
+
+    .skill_info {
+        font-size: 20px;
+    }
+
+    .shittyspace {
+        left: 0;
+        height: 600px;
+        width: 800px;
+        top: -12%;
+    } 
+}
+
+@media (orientation:portrait), (max-width: 800px) {
+    .bannerpic {
+        display: none;
+    }
+
+    .personal {
+        width: 85%;
+        left: 5px;
+        margin-left: 25px;
+        margin-bottom: 25px;
+    } 
+
+    .personal_info {
+        font-size: 12px;
+    }
+
+    .picbox {
+        border-width: 5px;
+        left: 0px;
+        width: 100px;
+        height: 125px;
+    }
+
+    .shittyspace {
+        height: 300px;
+        width: 300px;
+        top: -300px;
+        left: 0;
+    }
+
+    .skillsets_box {
+        margin-left: 15%;
+    }
+
+    .skill_info {
+        font-size: 13px;
+    }
+
+}

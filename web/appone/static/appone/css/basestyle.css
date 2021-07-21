@@ -1,0 +1,53 @@
+ html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: rgb(36, 44, 61, 1);
+}
+
+.navbar {
+    margin: auto;
+    border: dashed;
+    border-color: rgba(36, 44, 61, 1);
+    height: 80px;
+    width: 90%;
+    font-weight: bold;
+}
+
+.content {
+    position: relative;
+    top: 20px;
+    min-height: 100%;
+    background: rgb(36, 44, 61, 1);
+}
+
+
+/* XL Screens + Tv's 1312px */
+@media screen and (max-width: 110em) {
+
+}
+
+/* Desktops, Large Screens 992px */
+@media screen and (max-width: 86em) {
+
+}
+
+/* Tablets 688px */
+@media screen and (max-width: 1080px) {
+
+}
+
+/* Phones */
+@media (orientation:portrait), (max-width: 800px) {
+    .navbar-brand {
+        font-size: 12px;
+        margin: auto;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+} 

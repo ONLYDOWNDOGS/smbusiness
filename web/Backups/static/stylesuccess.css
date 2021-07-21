@@ -1,0 +1,41 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: rgb(36, 44, 61, 1);
+}
+
+a {
+    font-size: 30px;
+}
+
+@media (min-width:567px) {
+    .abs-center-x {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.navbar {
+    position: relative;
+    border: solid;
+    border-color: rgba(36, 44, 61, 1);
+    border-top-width: 2px;
+    border-bottom-width: 10px;
+    border-right-width: 15px;
+    border-left-width: 15px;
+    height: 75px;
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.content {
+    min-height: 100%;
+    background: rgb(36, 44, 61, 1);
+}

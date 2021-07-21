@@ -1,0 +1,9 @@
+{% if latest_spacefact_list %}
+<ul>
+  {% for spacefact in latest_spacefact_list %}
+  <li>{{ spacefact.spacefact_text }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}

@@ -1,0 +1,28 @@
+body {
+  background: url("img/mountains.jpg") no-repeat fixed;
+}
+
+.first {
+  display: table-cell;
+  vertical-align: middle;
+  border-radius: 200px;
+  background-color: #a87f5f;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 200px;
+  height: 200px;
+}
+
+.first_text {
+  text-align: center;
+  font-size: 50px;
+  color: magenta;
+}
+
+.navbar {
+  border: solid 5px;
+  background: linear-gradient(red, yellow);
+}

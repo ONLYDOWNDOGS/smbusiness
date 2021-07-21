@@ -1,0 +1,35 @@
+{% load static %}
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="{% static 'apponeimg/favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'appone/css/styleportfolio.css' %}" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="{% static 'appone/js/portfolio.js' %}"></script>
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top text-center">
+      <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'contact/' %}">Contact</a>
+          <a class="dropdown-item" href="{% url 'homepage/' %}">Home</a>
+        </div>
+      </div>
+    </nav>
+    <div class='first'>
+      <p class='first_text'>Henlo World!</p> 
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+{% load static %}
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+		<link href="{% static 'appone/css/stylehome.css' %}" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		</script>
+		<script src="{% static 'appone/js/homepage.js' %}"></script>
+		<title>Home Page</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-static-top text-center">
+			<div class="dropdown show">
+				<a class="btn btn-secondary dropdown-
+# Register your models here.
+toggle" href="#" role="button"
+				id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">
+    		Dropdown link</a>
+  			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<a class="dropdown-item" href="{% url 'contact/' %}">Contact</a>
+					<a class="dropdown-item" href="{% url 'portfolio/' %}">Portfolio</a>
+  			</div>
+  		</div>
+		</nav>
+		<div id="btn">
+			<p class="bod">This is gonna disappear, Thanatobados style as it should be ~~~></p>
+		</div>
+		<input type='button' id='btnfunc' value='Click 8====D ~~~~~~~~~~'>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="personal">
+			<p class="personal_info">Personal description</p>
+		</div>
+		<br>
+		<div class="skillsets">
+			<p class="skill_info">List of skillsets, i.e. django, python, etc</p>
+		</div>
+		<br>
+		<div>
+		<div class="shittyspace">
+			<p class="spacefact">
+			{% if latest_spacefact_list %}
+			<ul>
+				{% for spacefact in latest_spacefact_list %}
+				<li>{{ spacefact.spacefact_text }}</li>
+				{% endfor %}
+			</ul>
+			{% else %}
+			<p>No polls are available.</p>
+			{% endif %}
+			</p>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</body>
+</html>

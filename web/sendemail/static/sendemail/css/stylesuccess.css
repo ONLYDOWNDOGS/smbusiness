@@ -1,0 +1,38 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: rgb(36, 44, 61, 1);
+}
+
+a {
+    font-size: 30px;
+}
+
+.content {
+    min-height: 100%;
+    background: rgb(36, 44, 61, 1);
+}
+
+/* XL Screens + Tv's 1312px */
+@media screen and (max-width: 110em) {
+
+}
+
+/* Desktops, Large Screens 992px */
+@media screen and (max-width: 86em) {
+
+}
+
+/* Tablets 688px */
+@media screen and (max-width: 1080px) {
+
+}
+
+/* Phones */
+@media (orientation:portrait), (max-width: 800px) {
+    
+} 

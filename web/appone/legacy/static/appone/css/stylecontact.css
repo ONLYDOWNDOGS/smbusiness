@@ -1,0 +1,56 @@
+.bods {
+	font-size: 25px;
+	color: green;
+	text-align: center;
+}
+
+/*a {
+	background: green;
+}*/
+
+.navbar {
+	border: solid;
+	color: blue;
+}
+
+a {
+	font-size: 30px;
+}
+
+a:hover {
+	color: white;
+}
+
+a:visited {
+	color: red;
+}
+
+a:link {
+	color: blue;
+}
+
+a:active {
+	color: yellow;
+}
+
+body {
+	background: url("img/mountains.jpg") no-repeat fixed;
+}
+
+.info {
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+	top: 30px;
+	left: 130px;
+	border: solid;
+	font-size: 120px;
+	background: linear-gradient(blue, red);
+	width: 1600px;
+}
+
+.info_text {
+	font-size: 120px;
+	color: blue;
+	text-align: center;
+}

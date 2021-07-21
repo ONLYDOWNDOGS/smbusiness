@@ -1,0 +1,98 @@
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="shortcut icon" href="{% static 'appone/css/img/favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'appone/css/stylehome.css' %}" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <script src="{% static 'appone/js/homepage.js' %}"></script>
+    <title>Home Page</title>
+  </head>
+
+  <body>
+    <br>
+    <nav class="navbar navbar-dark navbar-expand bg-dark justify-content-between">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown text-center">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-list"></span>
+            <span class="d-xl-block d-none"></span><span class="d-none d-sm-inline px-1">Menu</span> </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'appone:portfolio/' %}">Games</a>
+              <a class="dropdown-item" href="{% url 'appone:portfolio/' %}">Sites</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'appone:examples/' %}">Examples</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'appone:contact/' %}">Contact</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="content">
+      <div class="bannerpic">
+        <img class="toppic" src="{% static 'appone/css/img/banner.jpeg' %}" />
+      </div>
+      <!-- Light text, dark background. Thin div border. Look at other website to get font ideas.-->
+      <div class="top">
+        <div class="personal">
+          <p class="personal_info">Hey there! I'm Jon Cooke, and I'm a programmer. I have decades of
+            experience using computers, and am very well versed in python and using the Django web framework
+            for site building. I am experienced with making websites interact with databases,
+            as well as handle automated email and designing a simple and easy to use administrator page that
+            anybody could use to add more content to their website. I build stable websites with exstensive
+            testing to ensure that the user will not experience
+            an error on the site.
+          </p>
+        </div>
+        <br>
+        <div class="skillsets">
+          <p class="skill_info">
+          <h3>Skills that (don't =\) pay the bills:</h3>
+            <ol class="skill_info">
+              <li>Using Linux Machines</li>
+              <li>Python(2/3)</li>
+              <li>PostgreSQL</li>
+              <li>Django Web Framework</li>
+              <li>Unity Game Editor</li>
+              <li>Javascript/Jquery</li>
+              <li>Bash</li>
+              <li>Git</li>
+              <li>C#</li>
+            </ol>
+          </p>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="picbox">
+          <img class="pic" src="{% static 'appone/css/img/Zen.jpg' %}" />
+        </div>
+        <div class="shittyspace">
+          {% if latest_spacefact_list %}
+          <ul class="shittyspace_info">
+            {% for spacefact in latest_spacefact_list %}
+            <li class="spacefact">{{ spacefact.spacefact_text }}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p>No polls are available.</p>
+          {% endif %}
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </body>
+
+</html>

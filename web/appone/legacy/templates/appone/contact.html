@@ -1,0 +1,41 @@
+{% load static %}
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="{% static 'appone/img/favicon.ico' %}" type="image/x-icon">
+		<link href="{% static 'appone/css/stylecontact.css' %}" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+		</script>
+		<script src="{% static 'appone/js/contact.js' %}"></script>
+		<title>Contact Info</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-static-top text-center">
+			<div class="dropdown show">
+				<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Dropdown link</a>
+				<br>
+  			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  				<a class="dropdown-item" href="{% url 'homepage/' %}">Home</a>
+  				<a class="dropdown-item" href="{% url 'portfolio/' %}">Portfolio</a>
+  			</div>
+  		</div>
+		</nav>
+		<div id="btn">
+		<p class="bods">Heyyyyyyy! This is all gonna disappear when you click! Don't do it!!! ;)</p>
+		</div>
+		<input type='button' id='btnfunc' value='Click~~~~'>
+		<div class='info'>
+			<p class="info_text">Phone #-, Email-. Hours to contact
+			non intrusive div color and spread nicely. Very little content here!</p>
+		</div>
+	</body>
+</html>

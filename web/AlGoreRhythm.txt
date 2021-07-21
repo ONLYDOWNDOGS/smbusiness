@@ -1,0 +1,15 @@
+ 
+Nord:
+CZt9MRPjSBdMCkb
+
+Proton:
+fdHybbRAMP8XHz9
+
+Wifi:
+886de76b67aaa7
+
+Pi:
+ssh -Y pi@192.168.1.5
+
+Unity Dark:
+https://github.com/xeleh/enhancer.git

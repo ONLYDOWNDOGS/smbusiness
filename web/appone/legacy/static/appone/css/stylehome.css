@@ -1,0 +1,93 @@
+html{
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	background: url("img/mountains.jpg") no-repeat;
+}
+
+a {
+	font-size:30px;
+}
+
+a:hover {
+	color: black;
+}
+
+a:visited {
+	color: red;
+}
+
+.test {
+	font-size: 40px;
+}
+
+.navbar {
+	border: solid;
+	border-color: blue;
+	color: tan;
+}
+
+.bod {
+	text-align: center;
+	font-size: 25px;
+}
+
+.personal {
+	position: relative;
+	display: table-cell;
+	top: 30px;
+	left: 130px;
+	background-color: #E4D177;
+	border: solid;
+	width: 800px;
+	height: 500px;
+	vertical-align: middle;
+	}
+
+.personal_info {
+	text-align: center;
+	color: red;
+	font-size: 120px;
+}
+
+.skillsets {
+	position: relative;
+	display: table-cell;
+	top: 70px;
+	left: 1000px;
+	background-color: #815151;
+	border: solid;
+	width: 800px;
+	height: 750px;
+	vertical-align: middle;
+}
+
+.skill_info {
+	text-align: center;
+	font-size: 120px;
+	color: red;
+}
+
+.shittyspace {
+	position: relative;
+	display: table-cell;
+	top: 90px;
+	left: 130px;
+	bottom: -50px;
+	margin: auto;
+	border: solid;
+	background-image: linear-gradient(black, red);
+	height: 500px;
+	width: 800px;
+	vertical-align: middle;
+}
+/*
+.spacefact {
+	color: black;
+	text-align: center;
+	font-size: 105px;
+}
+*/

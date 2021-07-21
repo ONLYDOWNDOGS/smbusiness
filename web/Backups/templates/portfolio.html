@@ -1,0 +1,60 @@
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="shortcut icon" href="{% static 'appone/css/img/favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'appone/css/styleportfolio.css' %}" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <script src="{% static 'appone/js/portfolio.js' %}"></script>
+    <title>Portfolio</title>
+  </head>
+
+  <body>
+    <br>
+    <nav class="navbar navbar-dark navbar-expand bg-dark justify-content-between">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown text-center">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"><span class="fa fa-list"></span><span
+                class="d-xl-block d-none"></span><span class="d-none d-sm-inline px-1">Menu</span> </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'appone:homepage/' %}">Home</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'appone:examples/' %}">Examples</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'appone:contact/' %}">Contact</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="content">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class='first'>
+        <p class='first_text'>Henlo World!</p>
+      </div>
+      <div class='container'>
+        <div class='items'>1</div>
+        <div class='items'>2</div>
+        <div class='items'>3</div>
+        <div class='items'>4</div>
+        <div class='items'>5</div>
+        <div class='items'>6</div>
+      </div>
+    </div>
+  </body>
+
+</html>
