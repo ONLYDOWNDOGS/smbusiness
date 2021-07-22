@@ -8,8 +8,8 @@
 <html>
 
   <head>
-    <link rel="shortcut icon" href="{% static 'appone/css/img/favicon.ico' %}" type="image/x-icon">
-    <link href="{% static 'appone/css/basestyle.css' %}" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="{% static '' %}" type="image/x-icon">
+    <link href="{% static '' %}" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block style %}
     {% endblock style %}
@@ -19,11 +19,7 @@
   <body>
     <br>
     <nav class="navbar navbar-dark navbar-expand bg-dark justify-content-between">
-      <a class="navbar-brand" href="{% url 'appone:homepage/' %}">Home</a>
-      <a class="navbar-brand" href="{% url 'appone:portfolio/' %}">Games</a>
-      <a class="navbar-brand" href="{% url 'appone:portfolio/' %}">Sites</a>
-      <a class="navbar-brand" href="{% url 'appone:examples/' %}">Examples</a>
-      <a class="navbar-brand" href="{% url 'appone:contact/' %}">Contact</a>
+      
     </nav>
     {% block content %}
     <p>This better not be showing up.</p>
