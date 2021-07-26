@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'lawncare',                      # Or path to database file if using sqlite3.
+        'NAME': 'lawncare',  # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'jon',
         'PASSWORD': 'pqowkd_123',
-        'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-        'PORT': '5432',                      # Set to empty string for default.
+        'HOST': 'localhost', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '5432', # Set to empty string for default.
     }
 }
 
@@ -130,10 +130,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "staticfiles",
-    
-]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
