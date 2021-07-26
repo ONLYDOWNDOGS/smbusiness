@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <form action="{% url 'posts:vote' announcement.id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+      <legend><h1>{{ announcement.announcement_text }}</h1></legend>
+      {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+      {% for posts in announcement.posts_set.all %}
+        <input type="radio" name="posts" id="posts{{ forloop.counter }}" value="{{ posts.id }}">
+        <label for="posts{{ forloop.counter }}">{{ posts.posts_text }}</label>
+        <br>
+      {% endfor %}
+    </fieldset>
+    <input type="submit" value="Vote">
+    </form>
+  </body>
+</html>

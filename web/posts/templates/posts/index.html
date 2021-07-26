@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test Page</title>
+    </head>
+    <body>
+    {% if latest_announcement_list %}
+        <ul>
+        {% for announcement in latest_announcement_list %}
+            <li><a href="{% url 'posts:detail' announcement.id %}">{{ announcement.announcement_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+    </body>
+</html>
