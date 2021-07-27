@@ -14,8 +14,8 @@ class Announcement(models.Model):
 
 class BlogPost(models.Model):
     title = models.ForeignKey(Announcement, on_delete=models.CASCADE)
-    post_text = models.CharField(max_length=500)
+    posts_text = models.CharField(max_length=500)
     #added for sake of tutorial and learning, don't think I'll need votes lol
     votes = models.IntegerField(default=0)
     def __str__(self):
-        return self.post_text
+        return self.posts_text

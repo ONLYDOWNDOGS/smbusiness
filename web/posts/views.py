@@ -1,19 +1,38 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse
-from .models import Announcement
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.views import generic
 
-def index(request):
-    latest_announcement_list = Announcement.objects.order_by('-pub_date')[:5]
-    context = {'latest_announcement_list': latest_announcement_list}
-    return render(request, 'posts/index.html', context)
+from .models import Announcement, BlogPost
 
-def detail(request, announcement_id):
-    announcement = get_object_or_404(Announcement, pk=announcement_id)
-    return render(request, 'posts/detail.html', {'announcement': announcement})
+class IndexView(generic.ListView):
+    template_name = 'posts/index.html'
+    context_object_name = 'latest_announcement_list'
 
-def results(request, announcement_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % announcement_id)
+    def get_queryset(self):
+        # Return the last 5 announcements made
+        return Announcement.objects.order_by('-pub_date')[:5]
+    
+
+class DetailView(generic.DetailView):
+    model = Announcement
+    template_name = 'posts/detail.html'
+
+
+class ResultsView(generic.DetailView):
+    model = Announcement
+    template_name = 'posts/results.html'
 
 def vote(request, announcement_id):
-    return HttpResponse("You're voting on nothing lol heres a number %s." % announcement_id)
+    announcement = get_object_or_404(Announcement, pk=announcement_id)
+    try:
+        selected_choice = announcement.posts_set.get(pk=request.POST['posts'])
+    except (KeyError, BlogPost.DoesNotExist):
+        return render(request, 'posts/detail.html', {
+            'announcement': announcement,
+            'error_message': "You didn't select a choice",
+        })
+    else:
+        selected_choice.votes += 1
+        selected_choice.save()
+        return HttpResponseRedirect(reverse('posts:results', args=(announcement.id)))

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Results Page</title>
+    </head>
+    <body>
+        <h1>{{ announcement.announcement_text }}</h1>
+
+        <ul>
+        {% for posts in announcement.posts_set.all %}
+            <li>{{ posts.posts_text }} -- {{ posts.votes }} vote{{ posts.votes|pluralize }}
+            </li>
+        {% endfor %}
+        </ul>
+
+        <a href="{% url 'posts:detail' announcement.id %}">Vote Again?</a>
+    </body>
+</html>
