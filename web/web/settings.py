@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
+    'bootstrap4',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',

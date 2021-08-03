@@ -44,11 +44,12 @@ def vote(request, announcement_id):
         return HttpResponseRedirect(reverse('posts:results', args=(announcement.id)))
 
 
-class HomePageView(generic.ListView):
+class HomepageView(generic.ListView):
 
     template_name = 'posts/homepage.html'
-    context_object_name = 'announcement_text'
+    context_object_name = 'latest_announcement_list'
 
     def get_queryset(self):
-        return Announcement.objects.order_by('-pub_date')[:1]
+        # Excludes announcements that aren't published yet
+        return Announcement.objects.filter(pub_date__lte=timezone.now())
     
