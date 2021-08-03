@@ -42,3 +42,13 @@ def vote(request, announcement_id):
         selected_blogpost.votes += 1
         selected_blogpost.save()
         return HttpResponseRedirect(reverse('posts:results', args=(announcement.id)))
+
+
+class HomePageView(generic.ListView):
+
+    template_name = 'posts/homepage.html'
+    context_object_name = 'announcement_text'
+
+    def get_queryset(self):
+        return Announcement.objects.order_by('-pub_date')[:1]
+    

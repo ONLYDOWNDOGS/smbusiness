@@ -5,7 +5,7 @@ from .models import BlogPost, Announcement
 
 class BlogPostInline(admin.TabularInline):
     model = BlogPost
-    extra = 3
+    extra = 1
 
 class AnnouncementAdmin(admin.ModelAdmin):
     fieldsets = [

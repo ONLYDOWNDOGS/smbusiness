@@ -1,0 +1,21 @@
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="{% static 'appone/css/basestyle.css' %}" rel="stylesheet" type="text/css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% block style %}
+		{% endblock style %}
+	</head>
+
+	<body>
+		{% block content %}
+		<p>I shouldn't be here. I need to leave</p>
+		{% endblock content %}
+	</body>
+</html>
