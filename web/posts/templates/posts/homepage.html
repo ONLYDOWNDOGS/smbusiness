@@ -4,18 +4,15 @@
 {% bootstrap_css %}
 {% bootstrap_messages %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        {% block style %}
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{% static 'posts/css/stylehome.css' %}" rel="stylesheet" type="text/css">
-        <title>Home Page</title>
-        {% endblock style %}
-    </head>
 
-    {% block content %}
-    <p>I DO belong here. I should stay.</p>
-    {% endblock content %}
-</html>
+{% block style %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static 'posts/css/stylehome.css' %}" rel="stylesheet" type="text/css">
+<title>Home Page</title>
+{% endblock style %}
+
+
+{% block content %}
+<p>I DO belong here. I should stay.</p>
+{% endblock content %}
