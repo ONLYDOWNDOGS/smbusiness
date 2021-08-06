@@ -12,4 +12,5 @@ urlpatterns = [
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
     # ex: /posts/5/vote/
     path('<int:announcement_id>/vote/', views.vote, name='vote'),
+    path('contact/', views.emailview, name='contact')
 ]

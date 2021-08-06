@@ -1,8 +1,11 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+from django.core.mail import send_mail, BadHeaderError
+
+from .forms import ContactForm
 
 from .models import Announcement, BlogPost
 
@@ -52,4 +55,23 @@ class HomepageView(generic.ListView):
     def get_queryset(self):
         # Excludes announcements that aren't published yet
         return Announcement.objects.filter(pub_date__lte=timezone.now())
+
+def emailview(request):
+    """ This handles the emails, where they go, etc. """
+
+    if request.method == "GET":
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            from_email = form.cleaned_data['from_email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(subject, message, from_email,
+                        ['jonathanecooke90@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return render(request, 'posts/success.html')
+    return render(request, 'posts/email.html', {'form': form})
     

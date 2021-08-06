@@ -1,0 +1,33 @@
+.top-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    margin: 5% 10%;
+}
+
+.top-container>* {
+    margin: 0;
+    padding: 3% 3%;
+}
+
+.top-left {
+    display: flex;
+    position: relative;
+    top: 10px;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    height: 100px;
+}
+
+.top-right {
+    display: flex;
+    position: relative;
+    top: 15px;
+    border-width: 3px;
+    align-items: center;
+    border-style: dotted;
+    width: fit-content;
+    justify-content: center;
+}
