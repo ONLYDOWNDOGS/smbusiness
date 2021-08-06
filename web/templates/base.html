@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href="{% static 'posts/css/basestyle.css' %}" rel="stylesheet" type="text/css">
+		<link href="{% static 'posts/css/stylebase.css' %}" rel="stylesheet" type="text/css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{% block style %}
 		{% endblock style %}
@@ -17,7 +17,7 @@
     <div class="navbar-container">
       <nav class="navbar navbar-dark navbar-expand bg-dark justify-content-between">
         <p>It's good to be on top.</p>
-        <a class="navbar-brand" href="{% url 'posts:homepage/' %}">Home</a>
+        <a class="navbar-brand" href="{% url 'posts:index' %}">Home</a>
       </nav>
     </div>
     <br>
