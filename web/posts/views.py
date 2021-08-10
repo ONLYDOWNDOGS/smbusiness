@@ -54,7 +54,9 @@ class HomepageView(generic.ListView):
 
     def get_queryset(self):
         # Excludes announcements that aren't published yet
-        return Announcement.objects.order_by('-pub_date')[:1]
+        return Announcement.objects.filter(
+            pub_date__lte=timezone.now()
+            ).order_by('-pub_date')[:1]
 
 def emailview(request):
     """ This handles the emails, where they go, etc. """
