@@ -16,13 +16,14 @@
 	<body>
     <div class="navbar-container">
       <nav class="navbar navbar-dark navbar-expand bg-dark justify-content-between">
-        <p>It's good to be on top.</p>
         <a class="navbar-brand" href="{% url 'posts:index' %}">Home</a>
+		<a class="navbar-brand" href="{% url 'posts:index' %}">Posts</a>
+		<a class="navbar-brand" href="{% url 'posts:contact' %}">Contact</a>
       </nav>
     </div>
     <br>
-		{% block content %}
+	{% block content %}
     <p>I don't belong here......ohhh.ohhhhhh.....SHEEEEEEEEEEE'S</p>
-		{% endblock content %}
+	{% endblock content %}
 	</body>
 </html>
